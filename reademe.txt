@@ -1,0 +1,64 @@
+﻿作为以后的demo项目
+﻿作为以后的demo项目
+
+使用Spring整合Redis
+
+
+遇到的问题
+
+1.redis.clients.jedis.exceptions.JedisConnectionException: java.net.UnknownHostException: localhost  
+
+可能原因
+	1.服务器服务没有启动
+			启动服务
+	2.redis.properties中host 配置为localhost 但是hosts 没有对应
+			解决 修改hosts 或者 在redis.properties中直接使用127.0.0.1
+			
+			
+2.java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener
+
+是因为 没有添加spring-web
+3.java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
+
+是因为 没有添加spring-webmvc
+
+如果还是提示没有可能没有 引入jar
+
+4. Caused by: java.lang.NoSuchMethodError: redis.clients.jedis.JedisShardInfo.setTimeout(I)V
+
+更换jedis 版本到2.6.2以下
+
+
+需要 选择项目	properties	---deployment assembly -add maven dependes
+如果没有add maven dependes ,需要先maven -disable maven nature ，然后再configure-convert to mave project
+
+新增打包源码
+	<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+2017年3月8号
+
+新增redis3.0.7 cluster 模式集群 使用jedis 2.9.0 访问集群
+
+如果需要运行RedisTest 需要把jedis改回 2.6.0或者以前
+
+
+新增dubbo使用 api
+
+提供接口

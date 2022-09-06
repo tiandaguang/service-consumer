@@ -1,0 +1,12 @@
+
+spring:
+  profiles:
+    active: nacos
+
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
