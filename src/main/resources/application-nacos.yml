@@ -3,8 +3,10 @@ server:
 
 spring:
   application:
-    name: service-consumer
+    name: cloud-consumer
   cloud:
     nacos:
+      config:
+        server-addr: 127.0.0.1:8848
       discovery:
         server-addr: 127.0.0.1:8848
