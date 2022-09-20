@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: nacos
+
+server:
+  port: 8060
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
