@@ -1,4 +1,4 @@
-package com.etc.utils;
+package com.boot.demo.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

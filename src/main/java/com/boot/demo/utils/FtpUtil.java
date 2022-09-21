@@ -1,4 +1,4 @@
-package com.boot.demo.utils.message;
+package com.boot.demo.utils;
 
 //import com.jcraft.jsch.ChannelSftp;
 //import com.jcraft.jsch.JSch;
